@@ -97,9 +97,11 @@ while True:
             os.system('cp index.html /var/www/html')
     
         elif cmd2=='5':
-            down_file("")
-            os.system('rpm -ivh /root/jdk-8u171-linux-x64.rpm')
-            os.system('rpm -ivh /root/hadoop-1.2.1-1.x86_64.rpm --force') 
+            # os.system("pip3 install gdown")
+            # os.system("gdown --id 1541gbFeGZZJ5k9Qx65D04lpeNBw87rM5") #will download the hadoop file from gdrive
+            # os.system("gdown --id 17UWQNVdBdGlyualwWX4Cc96KyZhD-lxz")
+            # os.system('rpm -ivh /root/jdk-8u171-linux-x64.rpm')
+            # os.system('rpm -ivh /root/hadoop-1.2.1-1.x86_64.rpm --force') 
             hdfs_site()
             core_site()
             os.system('hadoop namenode -format')
@@ -107,7 +109,6 @@ while True:
             os.system('jps')
     
         elif cmd2=='6':
-            down_file("")
             os.system('rpm -ivh /root/jdk-8u171-linux-x64.rpm')
             os.system('rpm -ivh /root/hadoop-1.2.1-1.x86_64.rpm --force')
             hdfs_site()
@@ -205,9 +206,5 @@ while True:
         break
     else:
         print('\n\t\t\t\tPlease Choose Valid Options mention above')
-
-
-def down_file(file_id):
-    os.system(`pip3 install gdown`)
-    os.system(f`gdown --id {file_id} `)
+    
     
