@@ -1,6 +1,5 @@
 import os
 
-
 print('\t\t\t\t  Automation Configuration  ')
 print("\t\t\t\t---------------------------- ")
 print()
@@ -98,6 +97,7 @@ while True:
             os.system('cp index.html /var/www/html')
     
         elif cmd2=='5':
+            down_file("")
             os.system('rpm -ivh /root/jdk-8u171-linux-x64.rpm')
             os.system('rpm -ivh /root/hadoop-1.2.1-1.x86_64.rpm --force') 
             hdfs_site()
@@ -107,6 +107,7 @@ while True:
             os.system('jps')
     
         elif cmd2=='6':
+            down_file("")
             os.system('rpm -ivh /root/jdk-8u171-linux-x64.rpm')
             os.system('rpm -ivh /root/hadoop-1.2.1-1.x86_64.rpm --force')
             hdfs_site()
@@ -205,3 +206,8 @@ while True:
     else:
         print('\n\t\t\t\tPlease Choose Valid Options mention above')
 
+
+def down_file(file_id):
+    os.system(`pip3 install gdown`)
+    os.system(f`gdown --id {file_id} `)
+    
